@@ -16,3 +16,9 @@ plt.show()
 cropped_image = apollo_image[200:600, 200:900]
 plt.imshow(cropped_image,cmap="gray")
 plt.show()
+
+#edit brightness of the image
+matrix = np.ones(cropped_image.shape, dtype = "uint8") * 100
+img_brighter = cv2.add(cropped_image, matrix)
+plt.imshow(img_brighter,cmap="gray")
+plt.show()

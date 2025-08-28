@@ -22,3 +22,11 @@ matrix = np.ones(cropped_image.shape, dtype = "uint8") * 100
 img_brighter = cv2.add(cropped_image, matrix)
 plt.imshow(img_brighter,cmap="gray")
 plt.show()
+
+#flip the image
+img_flipped = cv2.flip(img_brighter, -1)
+plt.imshow(img_flipped,cmap="gray")
+plt.show()
+
+#save the image
+cv2.imwrite('Data/Apollo_11_Launch_Edited.jpg', img_flipped)
